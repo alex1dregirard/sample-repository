@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello world in JavaScript</title>
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script type="text/javascript">
+      // Select the div element with 'app' id
+      const app = document.getElementById("app");
+
+      // Create a new H1 element
+      const header = document.createElement("h1");
+
+      // Create a new text node for the H1 element
+      const headerContent = document.createTextNode("Hello world 🤩");
+
+      // Append the text to the H1 element
+      header.appendChild(headerContent);
+
+      // Place the H1 element inside the div
+      app.appendChild(header);
+
+      // Modify the H1 element to add "from JavaScript" text
+      header.textContent += " from JavaScript";
+
+      // Modify the H1 element to add text color
+      header.style.color = "red";
+
+      // Modify the H1 element to add text size
+      header.style.fontSize = "50px";
+
+      // Modify the H1 element to add text shadow
+      header.style.textShadow = "2px 2px 2px #ff0000";
+
+      // Modify the H1 element to blink
+      // setInterval(() => {
+      //   header.style.visibility =
+      //     header.style.visibility === "hidden" ? "visible" : "hidden";
+      // }, 1000);
+
+      // Add a hover effect to the H1 element
+      header.addEventListener("mouseover", () => {
+        header.style.color = "blue";
+      });
+
+      // Reset the H1 element color when the mouse leaves
+      header.addEventListener("mouseout", () => {
+        header.style.color = "red";
+      });
+
+      // Add a H2 element with the current date
+      const date = new Date();
+      const dateHeader = document.createElement("h2");
+      const dateContent = document.createTextNode(date);
+      dateHeader.appendChild(dateContent);
+      app.appendChild(dateHeader);
+
+      // Refresh the date every second
+      setInterval(() => {
+        dateHeader.textContent = new Date();
+      }, 1000);
+
+      // Add a button to change the H1 element color
+      const button = document.createElement("button");
+      const buttonText = document.createTextNode("Change color");
+      button.appendChild(buttonText);
+      app.appendChild(button);
+
+      // Change the H1 element color when the button is clicked
+      button.addEventListener("click", () => {
+        header.style.color = "green";
+      });
+
+    </script>
+  </body>
+</html>

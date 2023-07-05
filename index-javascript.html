@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello world in JavaScript</title>
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script>
+      // Select the div element with 'app' id
+      const app = document.getElementById("app");
+
+      // Create a new H1 element
+      const header = document.createElement("h1");
+
+      // Create a new text node for the H1 element
+      const headerContent = document.createTextNode("Hello world 🤩");
+
+      // Append the text to the H1 element
+      header.appendChild(headerContent);
+
+      // Place the H1 element inside the div
+      app.appendChild(header);
+    </script>
+  </body>
+</html>
