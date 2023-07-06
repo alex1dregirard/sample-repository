@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hello world in react</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <!-- React -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Babel Script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
+        const app = document.getElementById('app');
+
+        function Header() {
+            return <h1>Hello world 🤩</h1>;
+        }
+          
+        // Add a H2 element with the current date in react
+        function DateHeader() {
+            const date = new Date();
+            return <h2>{date.toString()}</h2>;
+        }
+
+        // Create a element to render header and date
+        function App() {
+            return (
+                <div>
+                    <Header />
+                    <DateHeader />
+                </div>
+            );
+        }        
+        
+
+        ReactDOM.render(<App />, app);
+    </script>
+</body>
+
+</html>
