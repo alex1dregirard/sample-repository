@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Hello world in react</title>
-</head>
+  </head>
 
 <body>
     <div id="app"></div>
@@ -13,30 +12,43 @@
     <!-- Babel Script -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/jsx">
-        const app = document.getElementById('app');
+        // Return a string if title is provided, otherwise return a default string
+        function createTitle(title) {
+            if (title) {
+              return title;
+            } else {
+              return 'Hello world 🤩';
+            }
+        }
 
-        function Header() {
-            return <h1>Hello world 🤩</h1>;
+        function Header({ title }) {
+            return <h1>Hello {createTitle(title)}</h1>
         }
           
-        // Add a H2 element with the current date in react
-        function DateHeader() {
-            const date = new Date();
-            return <h2>{date.toString()}</h2>;
-        }
+        function HomePage() {
+            const [likes, setLikes] = React.useState(0);
+            const names = ['Steve', 'Elon', 'Jeff'];
 
-        // Create a element to render header and date
-        function App() {
+            function handleClick() {
+                console.log('increment like count');
+                setLikes(likes + 1);
+            }
+            
             return (
-                <div>
+                <div id="HomePage">
                     <Header />
-                    <DateHeader />
+                    <Header title="Another hello world" />
+                    <ul>
+                        {names.map((name) => (
+                          <li key={name}>{name}</li>
+                        ))}
+                    </ul>
+                    <button onClick={handleClick}>Like {likes}</button>
                 </div>
             );
-        }        
+        }
         
-
-        ReactDOM.render(<App />, app);
+        ReactDOM.render(<HomePage />, app);
     </script>
 </body>
 
